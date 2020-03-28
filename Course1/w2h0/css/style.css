@@ -1,0 +1,60 @@
+.row-header{
+    margin:0px auto;
+    padding:0px;
+}
+
+.row-content {
+    /*margin:0px auto;*/
+    padding: 50px 0px 50px 0px;
+    /*border-bottom: 1px ridge;*/
+    min-height:400px;
+}
+
+.footer{
+    background-color: #dff2ff;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: #dff2ff ;
+    color:#0f0f0f;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+.link {
+    color: #0f0f8f;
+}
+
+.navbar-dark {
+    background-color: #1cafef;
+}
+
+#buttons-row .btn {
+    box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.3);
+    margin-top: 5px;
+}
+
+#buttons-row .btn:hover {
+    box-shadow: 0px 0px 5px rgba(50, 50, 50, 1);
+    color: white;
+}
+
+.btn-git {
+    background-color: #0f0f0f;
+    color: white;
+    /*box-shadow: 0px 0px 5px #000000*/
+}
+
+.btn-email {
+    background-color: #ff5C5C;
+    /*box-shadow: 0px 0px 5px #ff5C5C;*/
+    color: white;
+}
