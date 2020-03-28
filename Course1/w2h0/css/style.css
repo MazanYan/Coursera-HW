@@ -58,3 +58,15 @@ address{
     /*box-shadow: 0px 0px 5px #ff5C5C;*/
     color: white;
 }
+
+.capital {
+    font-size: xx-large;
+}
+
+#article-title {
+    max-width: 250px;
+}
+
+/*#single-form .mt-md-0 {
+    margin-top: -50rem !important;
+}*/
