@@ -1,0 +1,28 @@
+.jumbotron {
+    background-color: #ecf7ff;
+    /*color: #4f4f4f;*/
+    text-shadow: 0px 0px 5px #cfcfcf;
+}
+
+.footer {
+    background-color: #ecf7ff;
+    padding-top: 30pt;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+a {
+    color: #0f0f8f;
+}
+
+.navbar-dark {
+    background-color: #0f0faf;
+}
+
+.bg-primary {
+    background-color: #ffaf13;
+}
