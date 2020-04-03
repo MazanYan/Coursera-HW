@@ -4,6 +4,10 @@
     text-shadow: 0px 0px 5px #cfcfcf;
 }
 
+.row-content {
+    margin-top: 50px;
+}
+
 .footer {
     background-color: #ecf7ff;
     padding-top: 30pt;

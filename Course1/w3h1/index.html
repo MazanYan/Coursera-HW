@@ -45,14 +45,85 @@
 					<img class="img-fluid" width="200pt" src="img/logo.png">
 				</div>
 				<div class="col-12 col-sm-3 text-center justify-content-center align-self-center">
-					<a class="btn btn-warning" href="#reserve-table"><strong>Reserve Table</strong></a>
+					<a data-toggle="modal" data-target="#reserveTableModal" class="btn btn-warning" href="#reserve-table"><strong>Reserve Table</strong></a>
                 </div>
             </div>
         </div>
-    </header>
+	</header>
+	
+
+	<div id="reserveTableModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="content">
+			<div class="modal-content">
+				<div class="card">
+					<div class="modal-header">
+						<h4 class="modal-title">Reserve a Table </h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="card-body">
+						<div class="form-group row">
+							<label for="guests-num" class="col col-md-3" col-form-label>
+								<dt>Number of Guests</dt>
+							</label>
+							<div class="col-md-9">
+								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="1" checked> 1 </label>
+								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="2"> 2 </label>
+								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="3"> 3 </label>
+								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="4"> 4 </label>
+								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="5"> 5 </label>
+								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="6"> 6 </label>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="chooseSection" class="col col-md-3 col-form-label">
+								<dt>Section</dt>
+							</label>
+							<div class="col-md-6 btn-group btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-success">
+									<input type="radio" autocomplete="off" name="chooseSection" id="chooseSection1" value="1" checked>
+									Non-smoking
+								</label>
+								<label class="btn btn-danger">
+									<input type="radio" autocomplete="off" name="chooseSection" id="chooseSection2" value="2">
+									Smoking
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="date-time" class="col col-md-3 col-form-label">
+								<dt>Date and Time</dt>
+							</label>
+							<div class="col-12 col-md-5 date-time">
+								<input type="text" class="form-control" name="reserveDate" id="reserveDate" placeholder="Date">
+							</div>
+							<div class="col-12 col-md-4 date-time mt-1 mt-md-0">
+								<input type="text" class="form-control" name="reserveTime" id="reserveDate" placeholder="Time">
+							</div>
+						</div>
+		
+						<div class="form-group row">
+							<div class="offset-md-3 col-md-9">
+								<button type="button" data-dismiss="modal" class="btn btn-secondary">
+									Cancel
+								</button>
+								<button type="submit" class="btn btn-primary">
+									Submit
+								</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+  </section>
 
     <div class="container">
-        <div class="row">
+        <div class="row row-content">
 			<div class="col-12 col-md-3 order-md-last">
 				<h3><strong>Our Lipsmacking Culinary Creations</strong></h3>
 			</div>
@@ -65,7 +136,7 @@
 			</div>
         </div>
 
-        <div class="row">
+        <div class="row row-content">
 			<div class="col-12 col-md-3">
 				<h3><strong>This Month's Promotions</strong></h3>
 			</div>
@@ -78,7 +149,7 @@
 			</div>
 		</div>
 		
-		<div class="row">
+		<div class="row row-content">
 			<div class="col-12 col-md-3 order-md-last">
 				<h3><strong>Meet our Culinary Specialists</strong></h3>
 			</div>
@@ -91,50 +162,6 @@
                <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences.</p>
 			</div>
 		</div>
-
-		<div class="container my-5">
-            <form id="reserve-table">
-				<div class="card">
-					<h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-					<div class="card-body">
-						<div class="form-group row">
-							<label for="guests-num" class="col col-md-2" col-form-label>
-								<dt>Number of Guests</dt>
-							</label>
-							<div class="col-md-10">
-								<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="1" checked> 1 </label>
-									<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="2"> 2 </label>
-									<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="3"> 3 </label>
-									<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="4"> 4 </label>
-									<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="5"> 5 </label>
-									<label class="radio-inline"> <input type="radio" name="guests-num" id="guests-num" value="6"> 6 </label>
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label for="date-time" class="col col-md-2 col-form-label">
-								<dt>Date and Time</dt>
-							</label>
-							<div class="col-12 col-md-5 date-time">
-								<input type="text" class="form-control" name="reserveDate" id="reserveDate" placeholder="Date">
-							</div>
-							<div class="col-12 col-md-5 date-time mt-1 mt-md-0">
-								<input type="text" class="form-control" name="reserveTime" id="reserveDate" placeholder="Time">
-							</div>
-						</div>
-		
-						<div class="form-group row">
-							<div class="offset-md-2 col-md-10">
-								<button type="submit" class="btn btn-primary">
-									Submit
-								</button>
-							</div>
-						</div>
-
-					</div>
-				</div>
-            </form>
-        </div>
 	</div>
 
     <footer class="footer">
