@@ -6,13 +6,21 @@
   "scripts": {
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "clean": "rimraf dist",
+    "copyhtml": "copyfiles -f html/* dist/html",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin images/* --out-dir='dist/images'",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin html/gallery.html -d dist --htmlmin -o dist/html/gallery.html && usemin html/about.html -d dist --htmlmin -o dist/html/about.html && usemin html/feedback.html -d dist --htmlmin -o dist/html/feedback.html",
+    "build": "npm run clean && npm rum imagemin && npm run copyhtml && npm run copyfonts && npm run usemin"
   },
   "author": "MazanYan",
   "license": "ISC",
   "homepage": "https://github.com/MazanYan/Coursera-HW",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "copyfiles": "^2.2.0",
+    "lite-server": "^2.5.4",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
