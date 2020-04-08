@@ -1,0 +1,70 @@
+$lt-gray: #cfcfcf;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+$black: #0f0f0f;
+
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
+}
+
+.row-header{
+    @include zero-margin(0px,0px);
+}
+
+.row-content {
+    @include zero-margin(50px,0px);
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+.footer{
+    background-color: $background-pale;
+    @include zero-margin(20px, 0px);
+}
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background-color: $background-light;
+}
+
+address {
+    font-size:80%;
+    margin:0px;
+    color: $black;
+}
+
+body {
+    @include zero-margin(0px,0px);
+    z-index:0;
+}
+
+.navbar-dark {
+     background-color: $background-dark;
+}
+
+.tab-content {
+    border-left: 1px solid $lt-gray;
+    border-right: 1px solid $lt-gray;
+    border-bottom: 1px solid $lt-gray;
+    padding: 10px;
+}
+
+.modal {
+    .modal-title {
+        color:floralwhite;
+    }
+
+    .modal-header {
+        background-color: $background-dark;
+        .close {
+            color: floralwhite;
+        }
+    }
+
+    .modal-content {
+        background-color: $background-pale;
+        border-radius: 0px;
+    }
+}
