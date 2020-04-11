@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Navbar, NavbarBrand} from 'reactstrap';
 import MenuComponent from './components/Menu';
-import {DISHES} from './shared/Dishes';
+import {DISHES} from './shared/Dishes.js';
 
 class App extends Component {
   constructor(props) {

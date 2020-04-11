@@ -31,4 +31,52 @@ export const DISHES = [
       label:'',
       price:'2.99',
       description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'                        }
-   ];
+];
+
+export const COMMENTS = [
+    {
+        forDish: 0,
+        comments: [
+            {
+                text: 'Imagine all the eatables, living in conFusion!',
+                author: 'John Lemon',
+                date: 'Oct 17, 2020'
+            },
+            {
+                text: 'Sends anyone to heaven, I wish I could get my mother-in-law to eat it!',
+                author: 'Paul McVites',
+                date: 'Sep 06, 2014'
+            }
+        ]
+    },
+    {
+        forDish: 1,
+        comments: [
+            {
+                text: 'My favourite one!',
+                author: 'Daniel Radosav',
+                date: 'August 6, 2016'
+            },
+            {
+                text: 'I agree with the previous comment - this is also my favourite one',
+                author: 'James Marcov',
+                date: 'September 10, 2016'
+            },
+            {
+                text: 'I recomment it',
+                author: 'John Smith',
+                date: 'January 3, 2011'
+            }
+        ]
+    },
+    {
+        forDish: 3,
+        comments: [
+            {
+                text: 'I don\'t recomment',
+                author: 'Harry Potter',
+                date: 'November 11, 2012'
+            }
+        ]
+    }
+];
