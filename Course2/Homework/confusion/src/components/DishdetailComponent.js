@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
-import {COMMENTS} from '../shared/Dishes'
+import {Row, Card, CardImg, CardBody, CardTitle, CardText, CardHeader} from 'reactstrap';
 
 export class DishdetailComponent extends Component {
 
@@ -10,35 +9,32 @@ export class DishdetailComponent extends Component {
 
     renderComments() {
         if (this.props.dish !== null) {
-            const dishId = this.props.dish.id;
-            const dishComments = COMMENTS.filter((el) => el.forDish === dishId);
-            //console.log(dishComments);
-            if (dishComments.length) {
-                const commentsRendered = dishComments[0].comments.map((comment) => {
-                    console.log(comment);
-                    return (
-                    <div>
-                        <p>{comment.text}</p>
-                        <p>--{comment.author}, {comment.date}</p>
-                    </div>
-                )});
-                return (
-                    <div className="col-12 col-md-4">
-                        <h2 className="text-left">Comments</h2>
-                        <p className="text-left">
-                            {commentsRendered}
-                        </p>
-                    </div>
-                )
+            const dish = this.props.dish;
+            let commentsRendered;
+            if (dish.comments.length) {
+                commentsRendered = dish.comments.map((comment) => (
+                    <ul className="list-unstyled">
+                        <li>{comment.text}</li>
+                        <li>--{comment.author}, {comment.date}</li>
+                    </ul>
+                ));
+                
             }
             else {
-                return (
-                    <div className="col-12 col-md-4">
-                        <h2 className="text-left">Comments</h2>
-                        <p className="text-left">Be the first to submit your comment!</p>
-                    </div>
-                )
+                commentsRendered = (
+                    <ul className="list-unstyled">
+                        <li>Be the first to submit your comment!</li>
+                    </ul>
+                );
             }
+            return (
+                <div className="col-12 col-md-5 m-1">
+                    <h4 className="text-left">Comments</h4>
+                    <p className="text-left">
+                        {commentsRendered}
+                    </p>
+                </div>
+            )
         }
         else {
             return (
@@ -47,29 +43,33 @@ export class DishdetailComponent extends Component {
         }
     }
 
+    renderDish() {
+        const dish = this.props.dish;
+        return (
+            <Card>
+                <CardImg src={dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle><strong>{dish.name}</strong></CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        )
+    }
+
     render() {
         const dish = this.props.dish;
-        const comments = this.renderComments();
         if (dish !== null)
             return (
-                <Row>
-                    <div className="col col-md-2"></div>
-                    <div className="col-12 col-md-4">
-                        <Card>
-                            <CardImg top src={dish.image} alt={dish.name} />
-                            <CardBody>
-                                <CardTitle>{dish.name}</CardTitle>
-                                <CardText>{dish.description}</CardText>
-                            </CardBody>
-                        </Card>
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderDish()}
                     </div>
-                    {comments}
-                    <div className="col col-md-2"></div>
-                </Row>
+                    {this.renderComments()}
+                </div>
             );
         else
             return (
-                <Row></Row>
+                <div></div>
             );
     }
 }
