@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
 import {Row, Card, CardImg, CardBody, CardTitle, CardText, CardHeader} from 'reactstrap';
 
-export class DishdetailComponent extends Component {
+export class DishDetail extends Component {
 
     constructor(props) {
         super(props);
     }
 
     renderComments() {
-        if (this.props.dish !== null) {
+        if (this.props.dish !== undefined) {
             const dish = this.props.dish;
             let commentsRendered;
             if (dish.comments.length) {
                 commentsRendered = dish.comments.map((comment) => (
                     <ul className="list-unstyled">
                         <li>{comment.text}</li>
-                        <li>--{comment.author}, {comment.date}</li>
+                        <li>--{comment.author}, {new Intl.DateTimeFormat('en-US', {
+                                    year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))
+                                }
+                             }</li>
                     </ul>
                 ));
                 
@@ -44,21 +47,22 @@ export class DishdetailComponent extends Component {
     }
 
     renderDish() {
-        const dish = this.props.dish;
-        return (
-            <Card>
-                <CardImg src={dish.image} alt={dish.name} />
-                <CardBody>
-                    <CardTitle><strong>{dish.name}</strong></CardTitle>
-                    <CardText>{dish.description}</CardText>
-                </CardBody>
-            </Card>
-        )
+        if (this.props.dish !== undefined) {
+            const dish = this.props.dish;
+            return (
+                <Card>
+                    <CardImg src={dish.image} alt={dish.name} />
+                    <CardBody>
+                        <CardTitle><strong>{dish.name}</strong></CardTitle>
+                        <CardText>{dish.description}</CardText>
+                    </CardBody>
+                </Card>
+            )
+        }
     }
 
     render() {
-        const dish = this.props.dish;
-        if (dish !== null)
+        if (this.props.dish !== null)
             return (
                 <div className="row">
                     <div className="col-12 col-md-5 m-1">

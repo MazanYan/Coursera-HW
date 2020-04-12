@@ -1,30 +1,10 @@
 import React, {Component} from 'react';
-import { Card, Row, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
-import {DishdetailComponent} from './DishdetailComponent';
+import { Card, Row, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
-class MenuComponent extends Component {
+export class Menu extends Component {
     constructor(props) {
         super(props);
     
-    this.state = {
-        selectedDish: null
-        };
-    }
-
-    onDishSelect(dish) {
-        this.setState({selectedDish: dish});
-    }
-
-    renderDish() {
-        const dish = this.state.selectedDish;
-        if (dish != null)
-            return (
-                <DishdetailComponent dish={dish}/>
-            );
-        else
-            return (
-                <div></div>
-            );
     }
 
     render() {
@@ -32,7 +12,7 @@ class MenuComponent extends Component {
             return (
                 <div  className="col-12 col-md-5 m-1">
                     <Card key={dish.id}
-                        onClick={() => this.onDishSelect(dish)}>
+                        onClick={() => this.props.onClick(dish.id)}>
                         <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardImgOverlay>
                             <CardTitle>{dish.name}</CardTitle>
@@ -47,12 +27,7 @@ class MenuComponent extends Component {
             <Row>
                 {menu}
             </Row>
-            <div className="row mt-2">
-                {this.renderDish()}
-            </div>
         </div>
     );
     }
 }
-
-export default MenuComponent;
